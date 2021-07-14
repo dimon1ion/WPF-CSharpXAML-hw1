@@ -16,8 +16,8 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Label Foreground="White" IsEnabled="False" HorizontalAlignment="Right" Name="textBox2" Content="" Grid.Row="0"></Label>
-            <Label FontSize="26" Foreground="White" IsEnabled="False" FontWeight="Bold" HorizontalAlignment="Right" Name="textBox1" Content="0" Grid.Row="1"></Label>
+            <TextBox Foreground="Black" TextAlignment="Right" IsEnabled="False" Name="textBox2" Text="" Grid.Row="0"></TextBox>
+            <TextBox Foreground="Black" TextAlignment="Right" IsEnabled="False" Name="textBox1" Text="0" Grid.Row="1" FontSize="26" FontWeight="Bold"></TextBox>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>

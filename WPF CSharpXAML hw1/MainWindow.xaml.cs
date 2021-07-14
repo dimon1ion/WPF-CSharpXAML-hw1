@@ -40,7 +40,7 @@ namespace WPF_CSharpXAML_hw1
         private void Math_Operation(object sender, char operat)
         {
 
-            if (clear) { textBox1.Content = String.Empty; textBox2.Content = String.Empty; clear = false; }
+            if (clear) { textBox1.Text = String.Empty; textBox2.Text = String.Empty; clear = false; }
             switch (operat)
             {
                 case '+':
@@ -56,7 +56,7 @@ namespace WPF_CSharpXAML_hw1
                     Rename_TextBox2('*');
                     break;
                 case '=':
-                    textBox2.Content += textBox1.Content.ToString() + '=';
+                    textBox2.Text += textBox1.Text + '=';
                     box1 = Calc().ToString();
                     write = true;
                     clear = true;
@@ -66,7 +66,7 @@ namespace WPF_CSharpXAML_hw1
                     {
                         if (write)
                         {
-                            textBox1.Content = String.Empty;
+                            textBox1.Text = String.Empty;
                             write = false;
                             mathSymbol = true;
                         }
@@ -80,11 +80,11 @@ namespace WPF_CSharpXAML_hw1
             }
             if (write)
             {
-                textBox1.Content = box1;
+                textBox1.Text = box1;
             }
             if (clearTextbox1)
             {
-                textBox1.Content = String.Empty;
+                textBox1.Text = String.Empty;
                 clearTextbox1 = false;
                 deleting = false;
             }
@@ -94,11 +94,11 @@ namespace WPF_CSharpXAML_hw1
         {
             if (mathSymbol == false)
             {
-                if (textBox1.Content.ToString() == "")
+                if (textBox1.Text == "")
                 {
-                    textBox1.Content = "0";
+                    textBox1.Text = "0";
                 }
-                textBox2.Content += textBox1.Content.ToString() + symbol;
+                textBox2.Text += textBox1.Text + symbol;
                 box1 = Calc().ToString();
                 write = true;
             }
@@ -106,11 +106,11 @@ namespace WPF_CSharpXAML_hw1
             {
                 deleting = true;
                 replace = String.Empty;
-                for (int i = 0; i < textBox2.Content.ToString().Length - 1; i++)
+                for (int i = 0; i < textBox2.Text.Length - 1; i++)
                 {
-                    replace += textBox2.Content.ToString()[i];
+                    replace += textBox2.Text[i];
                 }
-                textBox2.Content = replace + symbol;
+                textBox2.Text = replace + symbol;
                 clearTextbox1 = true;
             }
         }
@@ -122,9 +122,9 @@ namespace WPF_CSharpXAML_hw1
             bool dot = false;
             int dotnum1 = 1;
             int dotnum2 = 1;
-            for (int i = 0; i < textBox2.Content.ToString().Length; i++)
+            for (int i = 0; i < textBox2.Text.Length; i++)
             {
-                switch (textBox2.Content.ToString().ElementAt(i))
+                switch (textBox2.Text.ElementAt(i))
                 {
                     case '+':
                         num1 /= dotnum1;
@@ -174,20 +174,20 @@ namespace WPF_CSharpXAML_hw1
                     default:
                         if (!operat)
                         {
-                            if (textBox2.Content.ToString().ElementAt(i) != ',')
+                            if (textBox2.Text.ElementAt(i) != ',')
                             {
                                 num1 *= 10;
-                                num1 += Double.Parse(textBox2.Content.ToString().ElementAt(i).ToString());
+                                num1 += Double.Parse(textBox2.Text.ElementAt(i).ToString());
                                 if (dot) { dotnum1 *= 10; }
                                 break;
                             }
                             dot = true;
                             break;
                         }
-                        if (textBox2.Content.ToString().ElementAt(i) != ',')
+                        if (textBox2.Text.ElementAt(i) != ',')
                         {
                             num2 *= 10;
-                            num2 += Double.Parse(textBox2.Content.ToString().ElementAt(i).ToString());
+                            num2 += Double.Parse(textBox2.Text.ElementAt(i).ToString());
                             if (dot) { dotnum2 *= 10; }
                             break;
                         }
@@ -205,31 +205,31 @@ namespace WPF_CSharpXAML_hw1
             {
                 if (Char.IsDigit(buttonSymbol))
                 {
-                    textBox1.Content = String.Empty;
+                    textBox1.Text = String.Empty;
                     nullpressed = false;
                 }
             }
-            if (buttonSymbol == '0' && (textBox1.Content.ToString() == String.Empty || defaultNull)) { nullpressed = true; }
+            if (buttonSymbol == '0' && (textBox1.Text == String.Empty || defaultNull)) { nullpressed = true; }
             if (dotpressed && buttonSymbol == ',') { return; }
             else if (buttonSymbol == ',')
             {
-                if (textBox1.Content.ToString() == String.Empty || defaultNull || write) { textBox1.Content = "0"; write = false; defaultNull = false; }
+                if (textBox1.Text == String.Empty || defaultNull || write) { textBox1.Text = "0"; write = false; defaultNull = false; }
                 dotpressed = true;
             }
             Math_Operation(sender, buttonSymbol);
             if (defaultNull)
             {
-                textBox1.Content = (sender as Button).Content.ToString();
+                textBox1.Text = (sender as Button).Content.ToString();
                 defaultNull = false;
                 return;
             }
-            textBox1.Content += (sender as Button).Content.ToString();
+            textBox1.Text += (sender as Button).Content.ToString();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            textBox1.Content = "0";
-            textBox2.Content = String.Empty;
+            textBox1.Text = "0";
+            textBox2.Text = String.Empty;
             clear = false;
             defaultNull = true;
             write = true;
@@ -244,14 +244,14 @@ namespace WPF_CSharpXAML_hw1
                 replace = String.Empty;
                 bool work = false;
                 int i = 0;
-                for (; i < textBox1.Content.ToString().Length - 1; i++)
+                for (; i < textBox1.Text.Length - 1; i++)
                 {
                     work = true;
-                    replace += textBox1.Content.ToString()[i];
+                    replace += textBox1.Text[i];
                 }
                 if (work)
                 {
-                    if (textBox1.Content.ToString()[i] == ',')
+                    if (textBox1.Text[i] == ',')
                     {
                         dotpressed = false;
                     }
@@ -263,7 +263,7 @@ namespace WPF_CSharpXAML_hw1
                     defaultNull = true;
                 }
             }
-            textBox1.Content = replace;
+            textBox1.Text = replace;
         }
 
         private void MathSymbol_Click(object sender, EventArgs e)
@@ -274,7 +274,7 @@ namespace WPF_CSharpXAML_hw1
 
         private void CE_Click(object sender, EventArgs e)
         {
-            textBox1.Content = "0";
+            textBox1.Text = "0";
             clear = false;
             defaultNull = true;
             write = true;
