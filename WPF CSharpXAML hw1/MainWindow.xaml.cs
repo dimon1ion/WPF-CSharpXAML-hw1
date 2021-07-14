@@ -238,9 +238,10 @@ namespace WPF_CSharpXAML_hw1
 
         private void Back_Click(object sender, EventArgs e)
         {
-            replace = String.Empty;
+            replace = "0";
             if (!write)
             {
+                replace = String.Empty;
                 bool work = false;
                 int i = 0;
                 for (; i < textBox1.Content.ToString().Length - 1; i++)
