@@ -291,5 +291,49 @@ namespace WPF_CSharpXAML_hw1
             write = true;
             dotpressed = false;
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            char key = e.Key.ToString()[e.Key.ToString().Length - 1];
+            Button tmp = new Button();
+            if (Char.IsDigit(key) || key == ',')
+            {
+                tmp.Content = key.ToString();
+                Digit_Click(tmp, e);
+                return;
+            }
+            if (e.Key.ToString() == "Back")
+            {
+                Back_Click(sender, e);
+                return;
+            }
+            switch (e.Key.ToString())
+            {
+                case "Back":
+                    Back_Click(sender, e);
+                    return;
+                case "Add":
+                case "OemPlus":
+                    key = '+';
+                    break;
+                case "Subtract":
+                case "OemMinus":
+                    key = '-';
+                    break;
+                case "Multiply":
+                    key = '*';
+                    break;
+                case "Divide":
+                    key = '/';
+                    break;
+                case "Return":
+                    key = '=';
+                    break;
+                default:
+                    return;
+            }
+            tmp.Content = key.ToString();
+            MathSymbol_Click(tmp, e);
+        }
     }
 }
