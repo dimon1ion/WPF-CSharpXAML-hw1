@@ -7,6 +7,31 @@
         mc:Ignorable="d"
         Title="Task2" Height="450" Width="800">
     <Grid>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click">Hello</Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TabPanel Grid.Column="0">
+            <Button Height="30" Width="50" Content="Navy" Foreground="Navy" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Blue" Foreground="Blue" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Aqua" Foreground="Aqua" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Teal" Foreground="Teal" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Olive" Foreground="Olive" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Green" Foreground="Green" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Lime" Foreground="Lime" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Yellow" Foreground="Yellow" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Orange" Foreground="Orange" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Red" Foreground="Red" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Maroon" Foreground="Maroon" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Fuchsia" Foreground="Fuchsia" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Purple" Foreground="Purple" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Black" Foreground="Black" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Silver" Foreground="Silver" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="Gray" Foreground="Gray" Margin="2,0,0,0"/>
+            <Button Height="30" Width="50" Content="White" Foreground="White" Margin="2,0,0,0"/>
+        </TabPanel>
+        <TabPanel Grid.Column="1">
+            <Button Content="Next Task" Height="50" Width="100" Click="Button_Click"/>
+        </TabPanel>
     </Grid>
 </Window>

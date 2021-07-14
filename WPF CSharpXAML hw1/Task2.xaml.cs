@@ -19,6 +19,7 @@ namespace WPF_CSharpXAML_hw1
     /// </summary>
     public partial class Task2 : Window
     {
+        MainWindow mainWindow;
         public Task2()
         {
             InitializeComponent();
@@ -26,7 +27,10 @@ namespace WPF_CSharpXAML_hw1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hello");
+            mainWindow = new MainWindow();
+            this.Visibility = Visibility.Collapsed;
+            mainWindow.ShowDialog();
+            this.Close();
         }
     }
 }
