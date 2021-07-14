@@ -37,18 +37,6 @@ namespace WPF_CSharpXAML_hw1
             InitializeComponent();
         }
 
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (sender is Button)
-        //    {
-        //        textBox1.Text += (sender as Button).Content.ToString();
-        //    }
-        //}
-
-        //private void Clear_NumTextBox(object sender, RoutedEventArgs e)
-        //{
-        //    textBox1.Text = String.Empty;
-        //}
         private void Math_Operation(object sender, char operat)
         {
 
