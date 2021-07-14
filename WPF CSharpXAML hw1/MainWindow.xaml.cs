@@ -88,12 +88,6 @@ namespace WPF_CSharpXAML_hw1
                             defaultNull = false;
                         }
                     }
-                    else
-                    {
-                        deleting = true;
-                        mathSymbol = true;
-                        clearTextbox1 = true;
-                    }
                     break;
             }
             if (write)
