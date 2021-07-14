@@ -255,6 +255,12 @@ namespace WPF_CSharpXAML_hw1
                         dotpressed = false;
                     }
                 }
+                else
+                {
+                    replace = "0";
+                    write = true;
+                    defaultNull = true;
+                }
             }
             textBox1.Content = replace;
         }
@@ -316,6 +322,11 @@ namespace WPF_CSharpXAML_hw1
             }
             tmp.Content = key.ToString();
             MathSymbol_Click(tmp, e);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Клавиатура тоже работает!", "Info");
         }
     }
 }

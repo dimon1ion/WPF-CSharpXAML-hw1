@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_CSharpXAML_hw1"
         mc:Ignorable="d"
-        Title="Calculator" Height="400" Width="400" MinWidth="120" MinHeight="250" KeyDown="Window_KeyDown">
+        Title="Calculator" Height="400" Width="400" MinWidth="120" MinHeight="250" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
